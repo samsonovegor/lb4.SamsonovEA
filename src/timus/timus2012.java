@@ -3,18 +3,19 @@ package timus;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class timus1639 {
+public class timus2012 {
     public static void main(String[] args) {
-
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        int m = in.nextInt();
-        int n = in.nextInt();
+        int numberOfTasks = in.nextInt();
 
-        int result = (m * n) % 2;
+        int difference = 12 - numberOfTasks;
+        int time = difference * 45;
 
-        out.println((result != 0) ? ("[:=[first]") : ("[second]=:]"));
+        String result = time <= 240 ? "YES" : "NO";
+
+        out.println(result);
         out.flush();
     }
 }

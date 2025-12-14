@@ -3,18 +3,21 @@ package timus;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class timus1639 {
+public class timus1409 {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
 
-        int m = in.nextInt();
-        int n = in.nextInt();
+        int a = in.nextInt();
+        int b = in.nextInt();
 
-        int result = (m * n) % 2;
+        int numberOfCans = a + b - 1;
 
-        out.println((result != 0) ? ("[:=[first]") : ("[second]=:]"));
+        int harry = numberOfCans - a;
+        int larry = numberOfCans - b;
+
+        out.println(harry + " " + larry);
         out.flush();
     }
 }

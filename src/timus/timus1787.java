@@ -1,20 +1,26 @@
 package timus;
 
-import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Main {
+public class timus1787 {
+
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
 
-        int m = in.nextInt();
+        int k = in.nextInt();
         int n = in.nextInt();
 
-        int result = (m * n) % 2;
+        int left = 0;
 
-        out.println((result != 0) ? ("[:=[first]") : ("[second]=:]"));
-        out.flush();
+        for(int i = 0; i < n; i++){
+            int x = in.nextInt();
+            left = left + x - k;
+            if(left < 0){
+                left = 0;
+            }
+        }
+        System.out.println(left);
+
     }
 }

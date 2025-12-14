@@ -1,9 +1,9 @@
-package timus.task_1293;
+package timus;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Main {
+public class timus1293 {
 
     public static void main(String[] args) {
 
