@@ -3,49 +3,34 @@ package lr8;
 import java.io.*;
 
 public class Example3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        try {
-            // ---------- Исходный файл ----------
-            BufferedWriter bw =
-                    new BufferedWriter(new FileWriter("poem.txt"));
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream("text.txt"), "cp1251"));
 
-            bw.write("Мороз и солнце день чудесный");
-            bw.newLine();
-            bw.write("Еще ты дремлешь друг прелестный");
-            bw.close();
+        PrintWriter out = new PrintWriter("result.txt", "cp1251");
 
-            // ---------- Обработка ----------
-            BufferedReader br =
-                    new BufferedReader(new FileReader("poem.txt"));
-            BufferedWriter out =
-                    new BufferedWriter(new FileWriter("words.txt"));
+        String line;
+        int lineNum = 0;
+        String consonants = "бвгджзйклмнпрстфхцчшщ";
 
-            String line;
-            int lineNumber = 1;
+        while ((line = br.readLine()) != null) {
+            lineNum++;
+            String[] words = line.split("\\s+");
+            int count = 0;
 
-            while ((line = br.readLine()) != null) {
-                String[] words = line.split("\\s+");
-                int count = 0;
-
-                for (String word : words) {
-                    if (word.matches("(?i)^[бвгджзйклмнпрстфхцчшщ].*")) {
-                        out.write("Строка " + lineNumber + ": " + word);
-                        out.newLine();
-                        count++;
-                    }
+            for (String w : words) {
+                if (!w.isEmpty() &&
+                        consonants.indexOf(Character.toLowerCase(w.charAt(0))) >= 0) {
+                    out.println("Строка " + lineNum + ": " + w);
+                    count++;
                 }
-
-                out.write("Количество слов: " + count);
-                out.newLine();
-                lineNumber++;
             }
-
-            br.close();
-            out.close();
-
-        } catch (IOException e) {
-            System.out.println("Ошибка: " + e);
+            out.println("Найдено слов: " + count);
         }
+
+        br.close();
+        out.close();
     }
 }

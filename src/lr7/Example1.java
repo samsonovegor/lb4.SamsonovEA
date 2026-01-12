@@ -27,6 +27,6 @@ public class Example1 extends Super1 {
 
     @Override
     public String toString() {
-        return "Example1: " + super.toString() + ", text2=" + text2;
+        return "lr8.Example1: " + super.toString() + ", text2=" + text2;
     }
 }
