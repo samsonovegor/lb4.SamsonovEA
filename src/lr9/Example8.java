@@ -65,7 +65,7 @@ public class Example8 {
         if (head == null) return;
         if (head.next == null) { head = null; return; }
         Node ref = head;
-        while (ref.next.next != null) ref = ref.next; // доходим до предпоследнего
+        while (ref.next.next != null) ref = ref.next; 
         ref.next = null;
     }
 
@@ -75,7 +75,7 @@ public class Example8 {
         Node ref = head;
         int k = 0;
         while (ref.next != null && k < index - 1) { ref = ref.next; k++; }
-        if (ref.next != null) ref.next = ref.next.next; // переброс ссылки
+        if (ref.next != null) ref.next = ref.next.next;
     }
 
     public void createHeadRec(int[] values) {
