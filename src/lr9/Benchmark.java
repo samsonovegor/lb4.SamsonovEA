@@ -26,7 +26,6 @@ public class Benchmark {
         for (int i = 0; i < K; i++) a.add(0);
         System.out.println("add конец  : " + ms(System.nanoTime() - t) + " ms");
 
-        // УДАЛЕНИЕ
         a = fillAL();
         t = System.nanoTime();
         for (int i = 0; i < K; i++) a.remove(0);
