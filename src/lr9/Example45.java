@@ -22,19 +22,19 @@ public class Example45 {
     }
 
     static Node createFromHead(int count) {
-        Node head = new Node(1, null);   // голова
-        Node ref = head;                 // вспомогательный указатель на текущий хвост
+        Node head = new Node(1, null); 
+        Node ref = head;          
         for (int i = 2; i <= count; i++) {
-            ref.next = new Node(i, null); // присоединяем новый узел
-            ref = ref.next;               // сдвигаемся на новый хвост
+            ref.next = new Node(i, null); 
+            ref = ref.next;       
         }
         return head;
     }
 
     static Node createFromTail(int count) {
-        Node head = new Node(count, null); // изначально создаём "хвост"
+        Node head = new Node(count, null); 
         for (int i = count - 1; i >= 1; i--) {
-            head = new Node(i, head);      // новый узел -> новая голова
+            head = new Node(i, head);  
         }
         return head;
     }
