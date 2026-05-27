@@ -1,15 +1,19 @@
+package lr9;
+
 import java.util.*;
 
-public class Benchmark {
+public class Example9 {
 
     static final int N = 1_000_000;
     static final int K = 10_000;
 
     static long ms(long nanos) { return nanos / 1_000_000; }
 
+
     static void benchArrayList() {
-        System.out.println(" ArrayList ");
+        System.out.println("ArrayList:");
         long t;
+
 
         ArrayList<Integer> a = fillAL();
         t = System.nanoTime();
@@ -26,7 +30,7 @@ public class Benchmark {
         for (int i = 0; i < K; i++) a.add(0);
         System.out.println("add конец  : " + ms(System.nanoTime() - t) + " ms");
 
-        // УДАЛЕНИЕ
+
         a = fillAL();
         t = System.nanoTime();
         for (int i = 0; i < K; i++) a.remove(0);
@@ -43,8 +47,9 @@ public class Benchmark {
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
 
+
     static void benchLinkedList() {
-        System.out.println(" LinkedList ");
+        System.out.println("LinkedList:");
         long t;
 
         LinkedList<Integer> l = fillLL();
@@ -78,8 +83,9 @@ public class Benchmark {
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
 
+
     static void benchArrayDeque() {
-        System.out.println(" ArrayDeque ");
+        System.out.println("ArrayDeque:");
         long t;
 
         ArrayDeque<Integer> d = fillAD();
@@ -107,9 +113,11 @@ public class Benchmark {
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
 
+
     static void benchGet() {
-        System.out.println(" Получение по индексу ");
+        System.out.println("Получение по индексу:");
         Random rnd = new Random(42);
+
 
         int GET_AL = 100_000_000;
         ArrayList<Integer> a = fillAL();
@@ -117,6 +125,7 @@ public class Benchmark {
         long sink = 0;
         for (int i = 0; i < GET_AL; i++) sink += a.get(rnd.nextInt(N));
         System.out.println("ArrayList  get x" + GET_AL + " : " + ms(System.nanoTime() - t) + " ms (sink=" + sink + ")");
+
 
         int GET_LL = 10_000;
         LinkedList<Integer> l = fillLL();

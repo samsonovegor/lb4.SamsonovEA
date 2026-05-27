@@ -1,4 +1,9 @@
+package lr9;
+
+import java.util.Scanner;
+
 public class Example8 {
+
 
     static class Node {
         int value;
@@ -7,6 +12,9 @@ public class Example8 {
     }
 
     private Node head;
+
+
+
 
     public void createHead(int[] values) {
         head = null;
@@ -18,12 +26,14 @@ public class Example8 {
         }
     }
 
+
     public void createTail(int[] values) {
         head = null;
         for (int v : values) {
             head = new Node(v, head);
         }
     }
+
 
     @Override
     public String toString() {
@@ -37,9 +47,11 @@ public class Example8 {
         return sb.append("]").toString();
     }
 
+
     public void addFirst(int value) {
         head = new Node(value, head);
     }
+
 
     public void addLast(int value) {
         Node node = new Node(value, null);
@@ -49,6 +61,7 @@ public class Example8 {
         ref.next = node;
     }
 
+
     public void insert(int index, int value) {
         if (index <= 0 || head == null) { addFirst(value); return; }
         Node ref = head;
@@ -57,17 +70,20 @@ public class Example8 {
         ref.next = new Node(value, ref.next);
     }
 
+
     public void removeFirst() {
         if (head != null) head = head.next;
     }
+
 
     public void removeLast() {
         if (head == null) return;
         if (head.next == null) { head = null; return; }
         Node ref = head;
-        while (ref.next.next != null) ref = ref.next; // доходим до предпоследнего
+        while (ref.next.next != null) ref = ref.next;
         ref.next = null;
     }
+
 
     public void remove(int index) {
         if (head == null) return;
@@ -75,8 +91,10 @@ public class Example8 {
         Node ref = head;
         int k = 0;
         while (ref.next != null && k < index - 1) { ref = ref.next; k++; }
-        if (ref.next != null) ref.next = ref.next.next; // переброс ссылки
+        if (ref.next != null) ref.next = ref.next.next;
     }
+
+
 
     public void createHeadRec(int[] values) {
         head = buildHeadRec(values, 0);
@@ -103,8 +121,9 @@ public class Example8 {
         return node.value + ", " + buildStringRec(node.next);
     }
 
+
     public static void main(String[] args) {
-        Task8LinkedList list = new Task8LinkedList();
+        Example8 list = new Example8();
         int[] data = {1, 2, 3, 4, 5};
 
         System.out.println("createHead([1,2,3,4,5]):      " + listAfterCreateHead(data));
@@ -125,7 +144,7 @@ public class Example8 {
         System.out.println("remove(3):                    " + list);
 
         System.out.println();
-        Task8LinkedList r = new Task8LinkedList();
+        Example8 r = new Example8();
         r.createHeadRec(data);
         System.out.println("createHeadRec + toStringRec:  " + r.toStringRec());
         r.createTailRec(data);
@@ -133,9 +152,9 @@ public class Example8 {
     }
 
     private static String listAfterCreateHead(int[] d) {
-        Task8LinkedList l = new Task8LinkedList(); l.createHead(d); return l.toString();
+        Example8 l = new Example8(); l.createHead(d); return l.toString();
     }
     private static String listAfterCreateTail(int[] d) {
-        Task8LinkedList l = new Task8LinkedList(); l.createTail(d); return l.toString();
+        Example8 l = new Example8(); l.createTail(d); return l.toString();
     }
 }
