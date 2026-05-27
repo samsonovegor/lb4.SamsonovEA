@@ -2,7 +2,6 @@ package lr9;
 
 public class Example4 {
 
-
     static class Node {
         int value;
         Node next;
@@ -12,8 +11,6 @@ public class Example4 {
             this.next = next;
         }
     }
-
-
     static void print(Node head) {
         Node ref = head;
         StringBuilder sb = new StringBuilder();
@@ -24,9 +21,6 @@ public class Example4 {
         }
         System.out.println(sb);
     }
-
-
-
     static Node createFromHead(int count) {
         Node head = new Node(1, null);
         Node ref = head;
@@ -36,10 +30,6 @@ public class Example4 {
         }
         return head;
     }
-
-
-
-
     static Node createFromTail(int count) {
         Node head = new Node(count, null);
         for (int i = count - 1; i >= 1; i--) {
@@ -47,7 +37,6 @@ public class Example4 {
         }
         return head;
     }
-
     public static void main(String[] args) {
         System.out.println("Способ 1: построение с головы:");
         Node list1 = createFromHead(7);

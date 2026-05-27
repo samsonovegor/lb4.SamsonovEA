@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Example7 {
 
-
     static int josephus(List<Integer> circle) {
         int idx = 0;
 

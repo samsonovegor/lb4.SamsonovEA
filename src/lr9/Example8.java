@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Example8 {
 
-
     static class Node {
         int value;
         Node next;
@@ -12,9 +11,6 @@ public class Example8 {
     }
 
     private Node head;
-
-
-
 
     public void createHead(int[] values) {
         head = null;
@@ -26,14 +22,12 @@ public class Example8 {
         }
     }
 
-
     public void createTail(int[] values) {
         head = null;
         for (int v : values) {
             head = new Node(v, head);
         }
     }
-
 
     @Override
     public String toString() {
@@ -47,11 +41,9 @@ public class Example8 {
         return sb.append("]").toString();
     }
 
-
     public void addFirst(int value) {
         head = new Node(value, head);
     }
-
 
     public void addLast(int value) {
         Node node = new Node(value, null);
@@ -61,7 +53,6 @@ public class Example8 {
         ref.next = node;
     }
 
-
     public void insert(int index, int value) {
         if (index <= 0 || head == null) { addFirst(value); return; }
         Node ref = head;
@@ -70,11 +61,9 @@ public class Example8 {
         ref.next = new Node(value, ref.next);
     }
 
-
     public void removeFirst() {
         if (head != null) head = head.next;
     }
-
 
     public void removeLast() {
         if (head == null) return;
@@ -84,7 +73,6 @@ public class Example8 {
         ref.next = null;
     }
 
-
     public void remove(int index) {
         if (head == null) return;
         if (index <= 0) { removeFirst(); return; }
@@ -93,8 +81,6 @@ public class Example8 {
         while (ref.next != null && k < index - 1) { ref = ref.next; k++; }
         if (ref.next != null) ref.next = ref.next.next;
     }
-
-
 
     public void createHeadRec(int[] values) {
         head = buildHeadRec(values, 0);
@@ -120,7 +106,6 @@ public class Example8 {
         if (node.next == null) return String.valueOf(node.value);
         return node.value + ", " + buildStringRec(node.next);
     }
-
 
     public static void main(String[] args) {
         Example8 list = new Example8();

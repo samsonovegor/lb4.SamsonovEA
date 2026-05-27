@@ -10,14 +10,12 @@ public class Example1 {
         }
     }
 
-
     static void example2(int x) {
         if (x >= 0 && x < 20) {
             example2(2 * x + 1);
             System.out.print(x + " ");
         }
     }
-
 
     static void example3(int x) {
         if (x >= 0 && x < 20) {
@@ -27,12 +25,10 @@ public class Example1 {
         }
     }
 
-
     static long factorial(int n) {
         if (n <= 1) return 1;
         return factorial(n - 1) * n;
     }
-
 
     static long fib(int n, int depth) {
 

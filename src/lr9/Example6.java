@@ -19,7 +19,6 @@ public class Example6 {
         System.out.println("Исходный HashMap: " + map);
         System.out.println();
 
-
         System.out.println("1) Строки с ключом > 5:");
         for (Map.Entry<Integer, String> e : map.entrySet()) {
             if (e.getKey() > 5) {
@@ -28,14 +27,12 @@ public class Example6 {
         }
         System.out.println();
 
-
         if (map.containsKey(0)) {
             String joined = String.join(", ", map.values());
             System.out.println("2) Ключ 0 присутствует. Все строки через запятую:");
             System.out.println("   " + joined);
         }
         System.out.println();
-
 
         long product = 1;
         boolean found = false;

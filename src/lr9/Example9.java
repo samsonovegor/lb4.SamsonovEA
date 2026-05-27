@@ -9,11 +9,9 @@ public class Example9 {
 
     static long ms(long nanos) { return nanos / 1_000_000; }
 
-
     static void benchArrayList() {
         System.out.println("ArrayList:");
         long t;
-
 
         ArrayList<Integer> a = fillAL();
         t = System.nanoTime();
@@ -30,7 +28,6 @@ public class Example9 {
         for (int i = 0; i < K; i++) a.add(0);
         System.out.println("add конец  : " + ms(System.nanoTime() - t) + " ms");
 
-
         a = fillAL();
         t = System.nanoTime();
         for (int i = 0; i < K; i++) a.remove(0);
@@ -46,7 +43,6 @@ public class Example9 {
         for (int i = 0; i < K; i++) a.remove(a.size() - 1);
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
-
 
     static void benchLinkedList() {
         System.out.println("LinkedList:");
@@ -83,7 +79,6 @@ public class Example9 {
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
 
-
     static void benchArrayDeque() {
         System.out.println("ArrayDeque:");
         long t;
@@ -112,7 +107,6 @@ public class Example9 {
         for (int i = 0; i < K; i++) d.removeLast();
         System.out.println("rm конец   : " + ms(System.nanoTime() - t) + " ms");
     }
-
 
     static void benchGet() {
         System.out.println("Получение по индексу:");
