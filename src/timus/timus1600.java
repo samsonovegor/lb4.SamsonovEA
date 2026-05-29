@@ -1,4 +1,8 @@
 package timus;
+
+import java.util.*;
+import java.io.*;
+
 public class timus1600 {
 
     static final double EPS = 1e-9;

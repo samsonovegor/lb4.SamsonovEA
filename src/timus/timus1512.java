@@ -1,5 +1,6 @@
 package timus;
 
+import java.io.*;
 public class timus1512 {
 
     public static void main(String[] args) throws Exception {
